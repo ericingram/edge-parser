@@ -10,7 +10,7 @@ npm-debug.log
 *.sublime-workspace
 *.log
 yarn.lock
-build
+#build
 dist
 shrinkwrap.yaml
 package-lock.json

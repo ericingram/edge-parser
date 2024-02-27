@@ -7,7 +7,6 @@
  * file that was distributed with this source code.
  */
 
-import { EOL } from 'node:os'
 // @ts-expect-error "untyped module"
 import stringify from 'js-stringify'
 
@@ -268,7 +267,7 @@ export class EdgeBuffer {
     /**
      * Write prefixes
      */
-    this.#prefix.forEach((text) => text.split(EOL).forEach((line) => buffer.push(`${line}`)))
+    this.#prefix.forEach((text) => text.split('\n').forEach((line) => buffer.push(`${line}`)))
 
     /**
      * Write setup code
@@ -288,9 +287,9 @@ export class EdgeBuffer {
     /**
      * Write prefixes
      */
-    this.#suffix.forEach((text) => text.split(EOL).forEach((line) => buffer.push(`${line}`)))
+    this.#suffix.forEach((text) => text.split('\n').forEach((line) => buffer.push(`${line}`)))
 
-    this.#compiledOutput = buffer.join(EOL)
+    this.#compiledOutput = buffer.join('\n')
     return this.#compiledOutput
   }
 }

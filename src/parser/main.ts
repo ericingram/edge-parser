@@ -7,7 +7,6 @@
  * file that was distributed with this source code.
  */
 
-import { EOL } from 'node:os'
 import { Tokenizer, MustacheTypes, TagTypes } from 'edge-lexer'
 import type { Token, TagToken, MustacheToken } from 'edge-lexer/types'
 
@@ -175,7 +174,7 @@ export class Parser {
         buffer.outputRaw(token.value)
         break
       case 'newline':
-        buffer.outputRaw(EOL === '\n' ? '\n' : '\r\n')
+        buffer.outputRaw('\n')
         break
       case TagTypes.TAG:
         if (typeof this.options.onTag === 'function') {
